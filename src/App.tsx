@@ -60,6 +60,11 @@ export default function App() {
     alarmSoundRef.current = new AlarmSound(soundEnabled, alarmType);
     notificationManagerRef.current = new NotificationManager();
 
+    // Check if notifications are already enabled
+    if (notificationManagerRef.current.isEnabled()) {
+      setNotificationEnabled(true);
+    }
+
     // Install PWA icons
     installPWAIcons().catch(console.error);
 
