@@ -1,9 +1,8 @@
 import React from 'react';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog';
+import { X, Volume2, VolumeX, Bell, Music, Info, Shield, Settings } from 'lucide-react';
 import { Label } from '../ui/label';
 import { Switch } from '../ui/switch';
 import { Separator } from '../ui/separator';
-import { Volume2, VolumeX, Bell, Music, Info, Shield } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { AlarmType } from '../../utils/audio';
 
@@ -38,17 +37,28 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onShowAbout,
   onTestAlarm,
 }) => {
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px] bg-card">
-        <DialogHeader>
-          <DialogTitle className="text-card-foreground">Einstellungen</DialogTitle>
-          <DialogDescription>
-            Passe die Timer-Benachrichtigungen an deine Bedürfnisse an.
-          </DialogDescription>
-        </DialogHeader>
+  if (!isOpen) return null;
 
-        <div className="space-y-6 py-4">
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-background rounded-2xl max-w-lg w-full max-h-[90vh] overflow-hidden shadow-2xl">
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-border">
+          <div className="flex items-center gap-3">
+            <Settings className="w-6 h-6 text-primary" />
+            <h2 className="text-2xl font-bold">Einstellungen</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-accent rounded-lg transition-colors"
+            aria-label="Schließen"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 pb-32 overflow-y-auto max-h-[calc(90vh-80px)] space-y-6">
           {/* Sound Settings */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -186,7 +196,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </ul>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   );
 };
