@@ -5,6 +5,7 @@
 
   export default defineConfig({
     plugins: [react()],
+    base: '/tickflip-timer/',
     publicDir: 'src/public',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
