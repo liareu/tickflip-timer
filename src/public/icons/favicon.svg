@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#000000"/>
+  
+  <!-- Timer Circle -->
+  <circle cx="32" cy="32" r="20" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.2"/>
+  
+  <!-- Progress Arc (3/4 filled) -->
+  <path d="M 32 12 A 20 20 0 1 1 12 32" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Center Dot -->
+  <circle cx="32" cy="32" r="2.5" fill="#FFFFFF"/>
+</svg>
