@@ -71,7 +71,7 @@ export default function App() {
     // Register Service Worker for PWA functionality
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/tickflip-timer/service-worker.js')
           .then((registration) => {
             console.log('ServiceWorker registration successful:', registration.scope);
           })

@@ -1,8 +1,7 @@
 const CACHE_NAME = 'tickflip-v1';
 const urlsToCache = [
-  '/',
-  '/App.tsx',
-  '/styles/globals.css',
+  '/tickflip-timer/',
+  '/tickflip-timer/index.html',
 ];
 
 // Install event - cache resources
