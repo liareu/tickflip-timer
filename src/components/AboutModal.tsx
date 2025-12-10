@@ -114,10 +114,19 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
           {/* Open Source */}
           <section className="space-y-3">
             <h3 className="text-lg font-bold">Open Source</h3>
-            <p className="text-sm text-muted-foreground">
-              TickFlip ist ein Open-Source-Projekt. Der Quellcode kann für eigene Projekte 
+            <p className="text-sm text-muted-foreground mb-3">
+              TickFlip ist ein Open-Source-Projekt. Der Quellcode kann für eigene Projekte
               verwendet werden.
             </p>
+            <a
+              href="https://github.com/liareu/tickflip-timer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors text-sm"
+            >
+              <Code className="w-4 h-4" />
+              Zum Quellcode auf GitHub
+            </a>
           </section>
 
           {/* Impressum */}
